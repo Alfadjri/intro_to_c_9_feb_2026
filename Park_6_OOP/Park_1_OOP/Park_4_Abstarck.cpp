@@ -7,10 +7,17 @@ class Animal{
     // virtual function : fungsi sementara yang gak tau bentuknya
     virtual void getSound() const = 0; // abstrak class
 };
+
 class Kucing : public Animal{
     public : 
     void getSound() const override{ // abstarck class overrider
         cout << "Meow !!!" << endl;
+    }
+};
+class Dog : public Animal{
+    public : 
+    void getSound() const override{ // abstarck class overrider
+        cout << "Wofff !!!" << endl;
     }
 };
 

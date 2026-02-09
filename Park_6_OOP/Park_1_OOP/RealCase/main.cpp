@@ -13,7 +13,7 @@ int main() {
 
     
     std::cout << "--- Menggunakan semua hewan di kandang ---" << std::endl;
-    for (int i = 0; i < jumlah_hewan; ++i) {
+    for (int i = 0; i < jumlah_hewan; i++) {
         Animal* hewan = kandang[i];
         hewan->showType();
         hewan->speak();

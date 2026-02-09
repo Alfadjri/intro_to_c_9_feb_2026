@@ -5,12 +5,12 @@
 #include <string>
 
 class Kucing : public Animal {
-public:
-    Kucing(const std::string& nama_kucing);
-    ~Kucing() override;
+    public:
+        Kucing(const std::string& nama_kucing);
+        ~Kucing() override;
 
-    void speak() const override;
-    void showType() const override;
+        void speak() const override;
+        void showType() const override;
 };
 
 #endif

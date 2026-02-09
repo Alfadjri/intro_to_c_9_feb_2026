@@ -23,8 +23,16 @@ class Animal{
         }
 };
 
+class Kucing : public Animal{
+    public:
+        Kucing(string nama_hewan) : Animal(nama_hewan){}
+        string getSuara(){
+            return "Miaw";
+        }
+};
+
 int main(){
-    Animal animal("Kucing");
-    animal.setNama("Dog");
-    cout << "Nama hewan : " << animal.getNama() << endl;
+    Kucing kucing("Kucing Oren");
+    cout << "Nama : " << kucing.getNama() << endl;
+    cout << "Suara : " << kucing.getSuara() << endl;
 }

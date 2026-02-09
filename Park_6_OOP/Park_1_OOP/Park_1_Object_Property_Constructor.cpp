@@ -1,5 +1,3 @@
-
-
 #include<iostream>
 using namespace std;
 
@@ -25,4 +23,6 @@ int main(){
     cout << animal.nama << endl;
     cout << "Umur kucing :" << endl;
     cout << animal.getUmur() << endl;
+
+    return 0;
 }
