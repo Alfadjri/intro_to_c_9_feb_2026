@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Button1.0.0
-DISTDIR = /Users/alfadjridwifadhilah/Desktop/Intro\ To\ programming/C++\ 5\ Jan\ 2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/build/.obj/Button1.0.0
+DISTDIR = /Users/alfadjridwifadhilah/Desktop/Intro\ To\ programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/build/.obj/Button1.0.0
 LINK          = /Library/Developer/CommandLineTools/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=14.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/opt/homebrew/lib
 LIBS          = $(SUBLIBS) -F/opt/homebrew/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtCore -framework IOKit -framework DiskArbitration -framework UniformTypeIdentifiers -framework OpenGL   
@@ -397,6 +397,7 @@ DIST          = /opt/homebrew/share/qt/mkspecs/features/spec_pre.prf \
 		/opt/homebrew/share/qt/mkspecs/features/qt_config.prf \
 		/opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf \
 		/opt/homebrew/share/qt/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/homebrew/share/qt/mkspecs/features/exclusive_builds.prf \
 		/opt/homebrew/share/qt/mkspecs/features/mac/sdk.prf \
 		/opt/homebrew/share/qt/mkspecs/features/toolchain.prf \
@@ -435,12 +436,12 @@ TARGET        = build/Button.app/Contents/MacOS/Button
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 26.2
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Library/Developer/CommandLineTools
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/alfadjridwifadhilah/Desktop/Intro To programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/.qmake.stash
 EXPORT_VALID_ARCHS = arm64
 EXPORT_DEFAULT_ARCHS = arm64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
 EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ARCHS), $(EXPORT_ARCHS), $(EXPORT_VALID_ARCHS)), -arch $(arch))
-EXPORT__PRO_FILE_ = /Users/alfadjridwifadhilah/Desktop/Intro To programming/C++ 5 Jan 2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/installation.pro
+EXPORT__PRO_FILE_ = /Users/alfadjridwifadhilah/Desktop/Intro To programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/installation.pro
 
 
 include /opt/homebrew/share/qt/mkspecs/features/mac/sdk.mk
@@ -791,6 +792,7 @@ Makefile: installation.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf 
 		/opt/homebrew/share/qt/mkspecs/features/qt_config.prf \
 		/opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf \
 		/opt/homebrew/share/qt/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/homebrew/share/qt/mkspecs/features/exclusive_builds.prf \
 		/opt/homebrew/share/qt/mkspecs/features/mac/sdk.prf \
 		/opt/homebrew/share/qt/mkspecs/features/toolchain.prf \
@@ -1164,6 +1166,7 @@ Makefile: installation.pro /opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf 
 /opt/homebrew/share/qt/mkspecs/features/qt_config.prf:
 /opt/homebrew/share/qt/mkspecs/macx-clang/qmake.conf:
 /opt/homebrew/share/qt/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/homebrew/share/qt/mkspecs/features/exclusive_builds.prf:
 /opt/homebrew/share/qt/mkspecs/features/mac/sdk.prf:
 /opt/homebrew/share/qt/mkspecs/features/toolchain.prf:
@@ -1232,13 +1235,14 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r build/Button.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
 ####### Sub-libraries
 
 run:
-	/Users/alfadjridwifadhilah/Desktop/Intro To programming/C++ 5 Jan 2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/build/Button.app/Contents/MacOS/Button
+	/Users/alfadjridwifadhilah/Desktop/Intro To programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/build/Button.app/Contents/MacOS/Button
 
 xcodeproj:
 	@$(QMAKE) -spec macx-xcode "$(EXPORT__PRO_FILE_)"
@@ -1267,7 +1271,7 @@ build/.moc/moc_Windows.cpp: include/Windows.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
 		build/.moc/moc_predefs.h \
 		/opt/homebrew/share/qt/libexec/moc
-	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include '/Users/alfadjridwifadhilah/Desktop/Intro To programming/C++ 5 Jan 2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/build/.moc/moc_predefs.h' -I/opt/homebrew/share/qt/mkspecs/macx-clang -I'/Users/alfadjridwifadhilah/Desktop/Intro To programming/C++ 5 Jan 2026/Park_7_GUI/Park_1_Wiget/Park_2_Button' -I'/Users/alfadjridwifadhilah/Desktop/Intro To programming/C++ 5 Jan 2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/include' -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/17/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/opt/homebrew/lib include/Windows.h -o build/.moc/moc_Windows.cpp
+	/opt/homebrew/share/qt/libexec/moc $(DEFINES) --include '/Users/alfadjridwifadhilah/Desktop/Intro To programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/build/.moc/moc_predefs.h' -I/opt/homebrew/share/qt/mkspecs/macx-clang -I'/Users/alfadjridwifadhilah/Desktop/Intro To programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button' -I'/Users/alfadjridwifadhilah/Desktop/Intro To programming/intro_to_c_9_feb_2026/Park_7_GUI/Park_1_Wiget/Park_2_Button/include' -I/opt/homebrew/lib/QtWidgets.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtCore.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/17/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/opt/homebrew/lib include/Windows.h -o build/.moc/moc_Windows.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1301,6 +1305,12 @@ build/.obj/Windows.o: src/Windows.cpp include/Windows.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/QVBoxLayout \
 		/opt/homebrew/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QRadioButton \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qradiobutton.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QButtonGroup \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qbuttongroup.h \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/QLabel \
+		/opt/homebrew/lib/QtWidgets.framework/Headers/qlabel.h \
 		/opt/homebrew/lib/QtCore.framework/Headers/QDebug \
 		/opt/homebrew/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/.obj/Windows.o src/Windows.cpp
